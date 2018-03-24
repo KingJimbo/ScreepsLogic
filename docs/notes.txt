@@ -1,0 +1,192 @@
+
+=================
+Screeps Notes
+=================
+
+What happens in Screeps
+
+Pick spawn location (don't need to worry about this for now can be done manually)
+Spawn creeps (how will spawns pick what type of creeps)
+Creep actions (list all creep actions then implementations)
+Plan layouts (most difficult manual process to begin with?)
+Labs
+Market
+
+================
+Spawn creeps
+================
+
+what level are you? 
+What should you be looking for?
+What does the economny need?
+What resources are in the room?
+What resources should we build creeps for/
+What is the most efficient number of creeps to spawn?
+Decide what creeps to spawn
+
+
+=====================
+Creep actions
+=====================
+
+What actions do creeps do
+All are defined within api
+what roles do they perform>
+
+Body part priority
+TARCWMCH
+
+Miner > C,W,W,W,W,M,M
+Harvester > 
+Carrier > 
+Worker > C,W,M
+Upgrader > 
+filler > C,M
+Builder > W,C,M
+Claimer > M,C
+Repairer
+Healer > ARHM
+Archer > ARRRRMH
+Soldier > AAAARMH
+Scout > ARWMMMMMMH
+Tank? > TTTTTARMH
+Sapper
+spook > M
+
+==================
+Buildings
+================
+Only roads can be built in unowned rooms
+
+What to Build
+When to build it
+Who should build it
+
+Container
+==========
+Container mining
+
+
+controller
+=============
+Can't build but can claim
+can only claim enough rooms as GCL dictates
+Controller maximum level 8
+Watch ticks until downgrade to stop lvl degradation
+You can reserve a controller
+you can only reserve a controller up to 5000 reservation points
+1 claim part will give 1 reservation point. 
+1 reservation point is burned every tick
+need a creep with 1 or more claim parts. (some calculations need to be done for viability/profits) 
+Should upgrade whenever you can
+if fully upgraded and nothing else to fill still upgrade implementations
+
+extension
+==========
+Used to store more energy for spawner to create more creeps
+will need to be placed on route to spawn from source
+
+extractor
+===============
+harvesting mineral requires an extractor
+required rcl6
+
+keeperlair
+==========
+can't build this but need to keep in mind the posability 
+
+Labs
+====
+No point until rcl6
+
+link
+====
+energy is transferred to another link in the room
+loss of 3% energy. need to calculate energy spent hauling vs 3% loss
+cool down of 1 tick per unit of distance from target
+
+nuker
+=======
+late level no need
+
+observer
+==========
+
+
+powerbank
+power spawn
+portal
+
+rampart
+============
+A rampart is a structure where own creeps can hide to protect against enemies.
+Costs 500 points to build, taking 100 ticks to build with one WORK body part costing 500 energy.
+Loose 300 hit points every 100 ticks. Can be repaired by 100 points per tick per one WORK bodypart (costs 1 energy per WORK bodypart).
+usually build a wall with rampart in the middle
+
+road
+==========
+A road tile takes 300 points to build, which means 60 ticks to build with a single WORK body part and costs of 300 energy.
+When a road is built and has less then full hits it can be repaired with a creep with WORK and CARRY components with energy by using the .repair() command
+Decreases movement cost to 1. Using roads allows creating creeps with less MOVE body parts.
+Cost
+
+300 at plain land
+1,500 at swamp
+Hits
+
+5,000 at plain land
+25,000 at swamp
+Decay
+
+Loses 100 hits every 1,000 ticks at plain land
+Loses 500 hits every 1,000 ticks at swamp
+Note: every creep step decreases the decay timer for 1 tick per each creep body part
+
+spawn
+==============
+can give 300 energy for creep
+each extension +50
+
+// replace swtich below with this
+let extensionCount = CONTROLLER_STRUCTURES[STRUCTURE_EXTENSION][room.controller.level]
+//
+
+let extensions = room.find(FIND_MY_STRUCTURES, { filter: (s) => s.structureType == STRUCTURE_EXTENSION });
+let extensionCount;
+switch (room.controller.level) {
+case 2:
+  extensionCount = 5;
+  break;
+case 3:
+  extensionCount = 10;
+  break;
+default:
+  extensionCount = (room.controller.level - 2) * 10;
+  break;
+}
+if (extensions.length >= extensionCount) {
+  room.memory.mode = room.memory.nextmode;
+}
+
+
+storage
+==============
+used to store excess energy
+Cannot be used by spawn for creeps
+
+terminal
+=========
+used for markets now necessary until later levels
+
+tower
+============
+Remotely attacks or heals creeps, or repairs structures. 
+Can be targeted to any object in the room. 
+However, its effectiveness highly depends on the distance. 
+Each action consumes energy.
+
+
+wall
+=======
+any but need to calculate most effective location
