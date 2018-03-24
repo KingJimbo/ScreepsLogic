@@ -35,6 +35,12 @@ enum CreepType{
     Filler="filler"
 }
 
+enum RoomThreatLevel{
+    Green=1, // No threats
+    Amber=2, // Threats but managable
+    Red=3 // Unmanageable threat
+}
+
 class CreepTemplatePart{
     constructor(public partType:string, public percentage:number){
     }

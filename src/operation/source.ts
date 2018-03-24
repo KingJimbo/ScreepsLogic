@@ -93,11 +93,11 @@ class SourceOperation{
         // assign correct jobs
     }
 
-    public createMiningRemote(source:Source){
+    public createMiningRemote(source:Source):any{
 
     }
 
-    public createMiningLocal(source:Source){
+    public createMiningLocal(source:Source):any{
 
     }
 
