@@ -1,6 +1,7 @@
 
 /// <reference path="..\reference.ts"/>
 /// <reference path=".\mining.ts"/>
+/// <reference path=".\hauling.ts"/>
 /// <reference path="..\utility.ts"/>
 /// <reference path="..\constants.ts"/>
 
@@ -50,6 +51,8 @@ class JobHelper{
     private getMemory():any{
         return Memory.jobHelper;
     }
+
+    
 
 
 }
