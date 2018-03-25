@@ -36,9 +36,9 @@ enum CreepType{
 }
 
 enum RoomThreatLevel{
-    Green=1, // No threats
-    Amber=2, // Threats but managable
-    Red=3 // Unmanageable threat
+    Green=0, // No threats
+    Amber=1, // Threats but managable
+    Red=2 // Unmanageable threat
 }
 
 class CreepTemplatePart{
