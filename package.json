@@ -1,0 +1,30 @@
+{
+  "name": "screeps-logic",
+  "version": "1.0.0",
+  "description": "kj screeps script logic",
+  "main": "main.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.106",
+    "screeps-typescript-declarations": "^4.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KingJimbo/ScreepsLogic.git"
+  },
+  "keywords": [
+    "Screeps"
+  ],
+  "author": "KJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KingJimbo/ScreepsLogic/issues"
+  },
+  "homepage": "https://github.com/KingJimbo/ScreepsLogic#readme"
+}
