@@ -39,7 +39,7 @@ class Settings {
     //              Methods 
     //===================================
 
-    public static readonly version:number=0;
+    public static readonly version:string="0.1";
 
     public initialise():void{
         var version = Settings.version;
