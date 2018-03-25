@@ -18,4 +18,15 @@ class RoomHelper{
             }
         });
     }
+
+    public initialiseRoomMemory(room:Room){
+        if(room.memory.initialisedTick !== undefined){
+            room.memory = null;
+        }
+
+        room.memory = {
+            initialisedTick: Game.time,
+            threatLvl: RoomThreatLevel.Green
+        };
+    }
 }

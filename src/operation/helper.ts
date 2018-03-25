@@ -9,19 +9,24 @@ class OperationHelper{
         this._sourceOp = sourceOp;
     }
 
-    public createSourceOps (room?:Room, opts?:any):any{
+    public createSourceOps (room?:Room):any{
 
         if(room){
-            this.createRoomSourceOps(room, opts);
+            this.createRoomSourceOps(room);
         }
         else{
             for(const i in Game.rooms) {
-                this.createRoomSourceOps(Game.rooms[i], opts);
+                this.createRoomSourceOps(Game.rooms[i]);
             }
         }
     }
 
-    private createRoomSourceOps(room:Room, opts?:any){
+    private createRoomSourceOps(room:Room, 
+        opts:any = { 
+            filter: function(source:Source) {
+                return Memory.sources[source.id] && Memory.sources[source.id].opId;
+            } 
+    }){
         // prechecks before creating operation
         // Don't create op if room threat level is high
 
