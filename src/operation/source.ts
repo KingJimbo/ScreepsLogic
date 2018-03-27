@@ -14,18 +14,6 @@ class SourceOperation{
     // TODO
     // create operation and return operation id
     createOp(source:Source):any{
-        // where is it located
-        // what resources are needed?
-        // creeps
-        // find out what is the current potential for creeps
-        //this.spawnHelper.GetCurrentMaxCreepPotential();
-        // what distinguishes source optypes?
-        // harvester ops no miners or haulers available
-        // miner op there are miners and haulers available
-
-        // if room has storage create haulers
-        // if room doesn't create fillers
-
         let miner = null,
             hauler = null,
             filler = null,
@@ -139,8 +127,14 @@ class SourceOperation{
 
     // assess an operation to see if it is meeting it's maximum potential
     // when to stop
-    assessOp(){
-
+    public assessOp(opId:string):number{
+        if(opId){
+            // is source local? (is it situated in a room with an owned controller)
+            
+        }
+        else{
+            return ERR_NOT_FOUND;
+        }
     }
 
     // required to remove all references to the operation from creeps, memory, etc...
