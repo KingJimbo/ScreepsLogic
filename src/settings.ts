@@ -43,11 +43,9 @@ class Settings {
 
     public initialise():void{
         var version = Settings.version;
-        if (!Memory.username) {
-            const struc = _.find(Game.structures) as StructureSpawn;
-            const creep = _.find(Game.creeps)
-            Memory.username = (struc ? struc.owner.username : false) || (creep ? creep.owner.username : false)
-          }
+        const struc = _.find(Game.structures) as StructureSpawn;
+        const creep = _.find(Game.creeps)
+        Memory.username = (struc ? struc.owner.username : false) || (creep ? creep.owner.username : false);
 
         var room = Game.spawns["spawn1"].room;
         // default settings.
@@ -59,6 +57,8 @@ class Settings {
             [Settings.MemoryStrings.HWT]: Game.time,
             [Settings.MemoryStrings.HomeRoom]: room.name
         }
+
+        Memory.sources = {};
     }
 
     //public getNextActionID(): string{

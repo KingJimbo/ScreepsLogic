@@ -103,11 +103,11 @@ class SourceOperation{
 
     public createSourceOp(source:Source, minerjobIds:string[]=[], haulerJobIds:string[]=[],workerJobIds:string[]=[]){
         var opId = Utility.getNextId(IdType.Operation);
-        Memory.ops[opId] = this.createOpData(opId,source.id,minerjobIds,haulerJobIds,workerJobIds);
-        this.assignOpToSource(source,opId);
+        Memory.ops[opId] = this.createSouceOperationMemory(opId,source.id,minerjobIds,haulerJobIds,workerJobIds);
+        this.createSourceMemory(source,opId);
     }
 
-    public createOpData(
+    public createSouceOperationMemory(
         opId:string,
         sourceId:string,
         minerjobIds:string[]=[], 
@@ -129,11 +129,11 @@ class SourceOperation{
         }
     }
 
-    assignOpToSource(source:Source, opId:string){
-        // does source have any operations assigned
-        if(!Memory.sources)Memory.sources={}; //TODO extract externally
-        if(!Memory.sources[source.id]) Memory.sources[source.id] = {
-            opId:opId
+    public createSourceMemory(source:Source, opId:string = null){
+        if(source && source.id && !Memory.sources[source.id]) { 
+            Memory.sources[source.id] = {
+                opId:opId
+            }
         }
     }
 
