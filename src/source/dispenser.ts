@@ -4,11 +4,11 @@ class SourceDispenser{
     private _originId:string;
     
     public constructor(){
-
+        this._destinationIds = {};
     }
 
     public addDestination(id:string){
-        this._destinationIds.push(id);
+        this._destinationIds[id] = id;
     }
 
     public removeDestination(id:string):number{

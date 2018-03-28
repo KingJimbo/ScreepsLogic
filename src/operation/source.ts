@@ -130,7 +130,12 @@ class SourceOperation{
     public assessOp(opId:string):number{
         if(opId){
             // is source local? (is it situated in a room with an owned controller)
-            
+            // what are the destinations of the energy
+            // calculate the optimal no. of creeps
+            // what creeps currently belong to the operation
+            // no. of creeps that need to be requsitioned
+            // should we calculate the current energy consumption vs the output of the operation?
+
         }
         else{
             return ERR_NOT_FOUND;
