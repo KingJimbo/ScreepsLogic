@@ -59,6 +59,7 @@ class Settings {
         }
 
         Memory.sources = {};
+        Memory.navPoints = {};
     }
 
     //public getNextActionID(): string{
