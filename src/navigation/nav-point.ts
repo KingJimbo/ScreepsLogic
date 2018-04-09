@@ -1,10 +1,13 @@
-
+/// <reference path="..\reference.ts"/>
 
 class NavPoint{
     /**
      *
      */
-    constructor(public startingPos:RoomPosition, public direction:number, public length:number, public localDestinations:string[], public roomDestination) {
+    constructor(
+        public posName:string, 
+        public direction:number, 
+        public distance:number) {
 
     }
 }

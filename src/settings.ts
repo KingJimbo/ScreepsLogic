@@ -59,7 +59,10 @@ class Settings {
         }
 
         Memory.sources = {};
+        Memory.roomPositions = {};
         Memory.navPoints = {};
+        Memory.roomDestinations = {};
+        Memory.localDestinations = {};
     }
 
     //public getNextActionID(): string{
