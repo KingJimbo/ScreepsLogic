@@ -1,5 +1,6 @@
 /// <reference path="..\reference.ts"/>
 /// <reference path=".\inavigator.ts"/>
+/// <reference path=".\nav-point.ts"/>
 /** 
 *
 */
