@@ -5,6 +5,6 @@ import * as _ from "lodash";
 
 // Local References
 /// <reference path=".\utility.ts"/>
-/// <reference path=".\logger.ts"/>
+/// <reference path=".\logger.js"/>
 /// <reference path=".\constants.ts"/>
 
