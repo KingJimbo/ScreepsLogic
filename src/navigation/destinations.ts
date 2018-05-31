@@ -1,3 +1,4 @@
+/// <reference path=".\nav-point.ts"/>
 
 abstract class Destination {
     /**
